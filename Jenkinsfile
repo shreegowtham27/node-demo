@@ -32,7 +32,7 @@ node {
     }
     
     stage('DAST'){
-        sh "docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' https://localhost:8500"
+        sh "docker run --rm sullo/nikto -h https://localhost:8500"
     }
 
     stage('Tag image') {
