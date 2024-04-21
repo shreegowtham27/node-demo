@@ -36,12 +36,12 @@ node {
     }
 
     stage('Tag image') {
-        sh "docker tag docker-node:latest 100697818263.dkr.ecr.ap-south-1.amazonaws.com/demo-app:lates"
+        sh "docker tag docker-node:latest 100697818263.dkr.ecr.ap-south-1.amazonaws.com/demo-app:${BUILD_NUMBER}"
     }
 
     stage('Push image') {
         docker.withRegistry('https://100697818263.dkr.ecr.ap-south-1.amazonaws.com', 'ecr:ap-south-1:AWS') {
-            sh "docker push 100697818263.dkr.ecr.ap-south-1.amazonaws.com/demo-app:latest"
+            sh "docker push 100697818263.dkr.ecr.ap-south-1.amazonaws.com/demo-app:${BUILD_NUMBER}"
         }
     }
 }
