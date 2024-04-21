@@ -32,7 +32,7 @@ node {
     }
     
     stage('DAST'){
-        sh "docker run --rm sullo/nikto -h https://localhost:8500"
+        sh "wapiti -u https://localhost:8500"
     }
 
     stage('Tag image') {
