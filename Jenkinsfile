@@ -40,8 +40,8 @@ node {
     }
 
     stage('Push image') {
-        docker.withRegistry('100697818263.dkr.ecr.ap-south-1.amazonaws.com/demo-app:latest', 'ecr:ap-south-1:AWS') {
-            sh "docker push 100697818263.dkr.ecr.us-east-1.amazonaws.com/docker-node:latest"
+        docker.withRegistry('https://100697818263.dkr.ecr.ap-south-1.amazonaws.com', 'ecr:ap-south-1:AWS') {
+            sh "docker push 100697818263.dkr.ecr.ap-south-1.amazonaws.com/demo-app:latest"
         }
     }
 }
