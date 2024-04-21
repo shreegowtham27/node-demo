@@ -8,10 +8,10 @@ const HOST = '0.0.0.0';
 
 
 
-// app.post('/message', (req, res) => {
-//   const message = req.body.message; 
-//   res.send(`<p>Message received: ${message}</p>`); 
-// });
+app.post('/message', (req, res) => {
+  const message = req.body.message; 
+  res.send(`<p>Message received: ${message}</p>`); 
+});
 
 
 // App
