@@ -22,8 +22,8 @@ node {
     
     stage('Security Scanning - Trivy') {
         script {
-           // sh "trivy image docker-node --exit-code 1 --severity CRITICAL"
-           sh "trivy image docker-node"
+            sh "trivy image docker-node --exit-code 1 --severity CRITICAL"
+           //sh "trivy image docker-node"
         }
     }
     
